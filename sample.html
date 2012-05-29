@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <style type="text/css">
+          
+       /* =============================================================== 
+            clearfix (http://nicolasgallagher.com/micro-clearfix-hack/)
+        =============================================================== */        
+        .clearfix { *zoom: 1; }
+        .clearfix:before, .clearfix:after { display: table; content: ""; }
+        .clearfix:after { clear: both; }        
+            
+       /* =============================================================== 
+            Page layout
+        =============================================================== */  
+        
+        .page {
+            width:75%;              /* leave some breathing room */
+            margin:auto;            /* center the page; not necessary if you remove the above line */
+
+            max-width:5000px;       /* 5000px is width of the backgroud-image. If someone were to make the browser wider 
+                                       than 5000px, the faux column wouldn't work so we set a max-width.*/
+        }
+        
+        .main {
+            background: url(opaque-0.70-5000.png)   /* use this image (you can also try with url(opaque-0.70-5000.png) to see another column effect */ 
+                        repeat-y                    /* repeat it vertically (all the way to the bottom) */
+                        70%                         /* offset it by 70%. (ratio between main div and sidebar div) */
+                        top;                        /* align image to the top */
+        }
+        
+        .article {
+            float:left;
+            width:69%;
+            padding-right:1%;
+            overflow:hidden;
+        }
+        
+        .sidebar {
+            float:right;
+            width:28%;
+            padding-left:1%;
+            padding-right:1%;
+            overflow:hidden;
+        }
+        
+        /* =============================================================== 
+            Responsive: When screen width is lesser than 600px, change ratio to 75/25. 
+            There is no good reason to chnage the ratio like this. This is just to demonstrate
+            the technique.
+        =============================================================== */        
+        
+        @media screen and (max-width: 600px)
+        {
+            .page {
+                width:95%;          
+                margin:auto;        
+                max-width:600px;              
+            }
+                        
+            .main {
+                background: url(opaque-0.75-600.png)
+                            repeat-y               
+                            75%                    
+                            top;                   
+            }
+        
+            .article {
+                float:left;
+                width:74.5%;
+                padding-right:0.5%;
+            }
+        
+            .sidebar {
+                float:right;
+                width:24%;
+                padding-left:0.5%;
+                padding-right:0.5%;
+                overflow:hidden;
+            }
+        }
+        
+        </style>
+    </head>
+
+    <body>
+        <div class="page">
+            <div>
+                header header header header header header header header header header 
+            </div>
+            <div class="main clearfix">
+                <div class="article">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta porttitor tellus sit amet cursus. Morbi nulla odio, blandit ac interdum at, consectetur eget purus. Ut cursus rhoncus neque, in rutrum diam congue in. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta porttitor tellus sit amet cursus. Morbi nulla odio, blandit ac interdum at, consectetur eget purus. Ut cursus rhoncus neque, in rutrum diam congue in. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta porttitor tellus sit amet cursus. Morbi nulla odio, blandit ac interdum at, consectetur eget purus. Ut cursus rhoncus neque, in rutrum diam congue in. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta porttitor tellus sit amet cursus. Morbi nulla odio, blandit ac interdum at, consectetur eget purus. Ut cursus rhoncus neque, in rutrum diam congue in. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta porttitor tellus sit amet cursus. Morbi nulla odio, blandit ac interdum at, consectetur eget purus. Ut cursus rhoncus neque, in rutrum diam congue in. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta porttitor tellus sit amet cursus. Morbi nulla odio, blandit ac interdum at, consectetur eget purus. Ut cursus rhoncus neque, in rutrum diam congue in. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta porttitor tellus sit amet cursus. Morbi nulla odio, blandit ac interdum at, consectetur eget purus. Ut cursus rhoncus neque, in rutrum diam congue in. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                </div>
+
+                <div class="sidebar">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta porttitor tellus sit amet cursus. Morbi nulla odio, blandit ac interdum at, consectetur eget purus. Ut cursus rhoncus neque, in rutrum diam congue in. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+                </div>
+            </div>
+            <div>
+                footer footer footer footer footer footer footer footer footer footer footer footer footer footer footer 
+            </div>
+        </div>
+    </body>
+</html>
+
